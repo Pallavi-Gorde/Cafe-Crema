@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café Crema — Nocturne Espresso Lounge | Saki Naka, Andheri East</title>
+<meta name="description" content="Café Crema, Andheri East — open 24/7. Signature espresso, wood-fired pizza, small plates and desserts at Hotel Peninsula Grand, Sakinaka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="#home" class="logo">CAFÉ <span>CREMA</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#story">Story</a><a href="#menu">Menu</a><a href="#reserve">Reserve</a><a href="#community">Community</a><a href="#visit">Visit</a>
+  </div>
+  <div class="nav-actions">
+    <button class="bag-btn" id="bagBtn">Bag <span id="bagCount">0</span></button>
+    <button class="staff-btn" id="staffBtn">Staff Portal ↗</button>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-text">
+    <span class="badge"><i></i> 24/7 OPEN • SAKINAKA</span>
+    <h1>Espresso after <em>midnight.</em></h1>
+    <p>Andheri East's round-the-clock coffee lounge. Single-origin shots, wood-fired plates and slow desserts — served with golden crema at any hour.</p>
+    <div class="hero-cta">
+      <a href="#menu" class="btn gold">Explore Menu</a>
+      <a href="#reserve" class="btn ghost">Book a Table</a>
+    </div>
+    <div class="stats"><div><b>24/7</b><small>Always open</small></div><div><b>4.3★</b><small>Guest rating</small></div><div><b>60+</b><small>Dishes & brews</small></div></div>
+  </div>
+  <div class="hero-img"><img src="hero_noir.jpg" alt="Café Crema lounge at night"></div>
+</header>
+
+<section class="story" id="story">
+  <img src="espresso_crema.jpg" alt="Signature espresso with crema">
+  <div>
+    <span class="eyebrow">Our Craft</span>
+    <h2>Named after the gold on top of every shot.</h2>
+    <p>Crema is the proof of a perfect extraction. At Café Crema we chase that layer every single time — from a 6am cortado to a 3am cold brew. Tucked inside Hotel Peninsula Grand at Sakinaka Junction, we're the lounge that never switches off.</p>
+    <ul class="ticks"><li>Freshly roasted Indian estate beans</li><li>Wood-fired pizzas & continental mains</li><li>In-house desserts baked daily</li></ul>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <span class="eyebrow center">The Menu</span>
+  <h2 class="center">Curated for every hour</h2>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="menuGrid"></div>
+</section>
+
+<section class="reserve" id="reserve">
+  <div class="reserve-card">
+    <span class="eyebrow">Reservations</span>
+    <h2>Reserve your table</h2>
+    <form id="reserveForm">
+      <input name="name" placeholder="Full name" required>
+      <input name="phone" placeholder="Phone number" required pattern="[0-9+ ]{10,14}">
+      <input name="date" type="date" required>
+      <input name="time" type="time" required>
+      <select name="guests"><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>6 Guests</option><option>8+ Guests</option></select>
+      <select name="seating"><option>Lounge Sofa</option><option>Window Side</option><option>Bar Counter</option><option>Private Corner</option></select>
+      <button class="btn gold full">Confirm Reservation</button>
+    </form>
+    <p class="msg" id="reserveMsg"></p>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <span class="eyebrow center">@cafecrema__</span>
+  <h2 class="center">Moments from our community</h2>
+  <div class="insta">
+    <img src="caramel_latte.jpg" alt=""><img src="burrata_pizza.jpg" alt=""><img src="cold_brew.jpg" alt=""><img src="crema_tiramisu.jpg" alt=""><img src="truffle_nachos.jpg" alt=""><img src="biscoff_frappe.jpg" alt="">
+  </div>
+  <div class="center"><a class="btn ghost" href="https://www.instagram.com/cafecrema__/" target="_blank" rel="noopener">Follow on Instagram</a></div>
+</section>
+
+<footer id="visit">
+  <div><h3 class="logo">CAFÉ <span>CREMA</span></h3><p>1st Floor, Hotel Peninsula Grand, Sakinaka Junction, Saki Naka, Andheri East, Mumbai 400072</p></div>
+  <div><h4>Hours</h4><p>Open 24 hours · 7 days</p></div>
+  <div><h4>Call</h4><p><a href="tel:+919930271349">+91 99302 71349</a><br><a href="tel:02228519191">022-2851 9191</a></p></div>
+  <p class="copy">© 2026 Café Crema, Andheri. Demo website.</p>
+</footer>
+
+<!-- Bag drawer -->
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h3>Your Bag</h3><button class="x" data-close="drawer">✕</button></div>
+  <div id="bagItems" class="bag-items"></div>
+  <div class="totals"><p>Subtotal <span id="sub">₹0</span></p><p>GST 5% <span id="gst">₹0</span></p><p class="grand">Total <span id="total">₹0</span></p>
+    <input id="tableNo" placeholder="Table no. / Name">
+    <button class="btn gold full" id="placeOrder">Place Order</button></div>
+</aside>
+<div class="overlay" id="overlay"></div>
+
+<!-- Staff modal -->
+<div class="modal" id="staffModal">
+  <div class="modal-box" id="loginBox">
+    <button class="x" data-close="staffModal">✕</button>
+    <h3>Staff Portal</h3><p class="muted">Demo login: crema_admin / Crema@2026</p>
+    <form id="loginForm"><input id="user" placeholder="Username" required><input id="pass" type="password" placeholder="Password" required><button class="btn gold full">Sign in</button></form>
+    <p class="msg err" id="loginMsg"></p>
+  </div>
+  <div class="dash" id="dash">
+    <div class="dash-head"><h3>Crema Control Room</h3><div><button class="btn ghost sm" id="inject">＋ Inject Demo Activity</button> <button class="btn ghost sm" id="logout">Log out</button> <button class="x" data-close="staffModal">✕</button></div></div>
+    <div class="kpis"><div><small>Shift Net Sales</small><b id="kSales">₹0</b></div><div><small>Active Orders</small><b id="kActive">0</b></div><div><small>Bookings</small><b id="kBook">0</b></div><div><small>Menu Items</small><b id="kItems">0</b></div></div>
+    <div class="tabs"><button class="on" data-tab="tOrders">Kitchen Queue</button><button data-tab="tBook">Table Bookings</button><button data-tab="tCat">Catalog</button></div>
+    <div class="tab on" id="tOrders"></div>
+    <div class="tab" id="tBook"></div>
+    <div class="tab" id="tCat"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
